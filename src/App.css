@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
   height: 40vmin;
@@ -38,4 +36,44 @@
   to {
     transform: rotate(360deg);
   }
+}
+iframe {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  /* margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+} */
+}
+
+/* ::-webkit-scrollbar {
+  width: 11px;
+} */
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  overflow: hidden;
+  /* Hide scrollbars */
+}
+
+#sidebar {
+  position: relative;
+  height: 100vh;
+  width: 100%;
 }

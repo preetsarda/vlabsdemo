@@ -1,11 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, NavLink, Routes } from 'react-router-dom'
+
 import Dashboard from './components/dashboard';
+import Example from './components/testscreen';
+import MainPanel from './components/vm';
+import Navbar from './components/nav';
+import MainPanels from './components/main';
 function App() {
   return (
-    <div className="App">
-      <Dashboard />
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<Dashboard />}></Route>
+        <Route path='/test' element={<MainPanels />}></Route>
+      </Routes>
+    </>
   );
 }
 
