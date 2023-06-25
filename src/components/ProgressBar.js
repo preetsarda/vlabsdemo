@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProgressBar.css';
 
-const ProgressBar = ({ tasks }) => {
-  const [totalTasks] = useState(tasks.length);
+const ProgressBar = (props) => {
+  const [totalTasks, sett] = useState(props.tasks);
+  const [completedPercentage, setcomp] = useState(0);
+  useEffect(() => {
+    sett(props.tasks)
+    setcomp((props.complete / totalTasks) * 100);
+    console.log(completedPercentage)
+  }, [props])
 
-  const completedTasks = tasks.filter(task => task.completed);
-  const completedPercentage = (completedTasks.length / totalTasks) * 100;
+  return (<div className='sticky-top'>
+    <div className="progress" role="progressbar" aria-label="Example with label" aria-valuenow={`${completedPercentage}%`} aria-valuemin={0} aria-valuemax={100}>
+      <div className="progress-bar bg-success progress-bar-striped progress-bar-animated" style={{ width: `${completedPercentage}%` }}>{completedPercentage.toFixed(2)}% completed</div>
+    </div></div>
 
-  return (
-    <div className="progress-bar">
-      <div
-        className="progress-bar__fill"
-        style={{ width: `${completedPercentage}%` }}
-      />
-      <div className="progress-bar__text">
-        {`${completedPercentage.toFixed(2)}% completed`}
-      </div>
-    </div>
   );
 };
 

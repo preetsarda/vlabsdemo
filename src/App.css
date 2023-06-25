@@ -37,6 +37,12 @@
     transform: rotate(360deg);
   }
 }
+.progress {
+  height: 23px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
 iframe {
   position: relative;
   height: 100vh;

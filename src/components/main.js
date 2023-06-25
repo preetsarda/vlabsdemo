@@ -7,7 +7,6 @@ import LabAccordion from './labacc';
 // import { createRef } from 'react';
 function MainPanels() {
     const ref = useRef(0)
-    const ref1 = useRef(null);
     const [f, setF] = useState(0);
     const [vserverlink, setServer] = useState({
         url: "",
@@ -32,11 +31,12 @@ function MainPanels() {
         updateServer(dat.VmDetails);
         updateLabs(dat.Lab);
     }
-    function fo() {
+    const handleOtherElementClick = () => {
+        // Set focus back to the embedded element
         if (ref.current) {
-            ref.current.contentWindow.focus()
+            ref.current.focus();
         }
-    }
+    };
     useEffect(() => {
         ab();
         if (labs) {
@@ -47,7 +47,7 @@ function MainPanels() {
         <div className="container-fluid g-0 p-0 ms-0 me-0">
             <div className="row m-0 g-0 p-0">
                 <div className="container mt-0  ms-0 me-0 col-9 g-0 text-align-center">
-                    <div><MainPanel link={vserverlink} ref={ref} />
+                    <div><iframe id="content" tabIndex="-1" src={vserverlink.url} ></iframe>
                     </div>
                 </div>
                 <div className="col-3 g-0 p-0 ms-0 me-0">
