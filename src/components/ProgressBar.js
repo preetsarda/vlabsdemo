@@ -7,7 +7,6 @@ const ProgressBar = (props) => {
   useEffect(() => {
     sett(props.tasks)
     setcomp((props.complete / totalTasks) * 100);
-    console.log(completedPercentage)
   }, [props])
 
   return (<div className='sticky-top'>

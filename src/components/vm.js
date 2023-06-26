@@ -1,5 +1,4 @@
 import React, { forwardRef } from 'react';
-import VmDetails from './vmced';
 
 const MainPanel = forwardRef((props, ref) => {
     return (
