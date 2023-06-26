@@ -42,7 +42,9 @@ const LabAccordion = ({ labs }) => {
         if (answers[ob - 1][q - 1] !== undefined) {
             if (Answer[`${q}`] === answers[ob - 1][q - 1]) {
                 setwrongAnswer(false);
-                setCount(Count => Count + (checked ? 1 : -1));
+                if (checked) {
+                    setCount(Count => Count + 1);
+                }
             } else {
                 setwrongAnswer(true);
             }
