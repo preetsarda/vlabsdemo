@@ -1,11 +1,9 @@
-import React, { createRef, useState } from 'react';
+import React, { useState } from 'react';
 
 import { useRef, useEffect } from 'react';
 import LabAccordion from './labacc';
-// import { createRef } from 'react';
 function MainPanels() {
     const ref = useRef(0)
-    const [f, setF] = useState(0);
     const [vserverlink, setServer] = useState({
         url: "",
         username: "",
@@ -53,7 +51,7 @@ function MainPanels() {
         <div className="container-fluid g-0 p-0 ms-0 me-0">
             <div className="row m-0 g-0 p-0">
                 <div className="container mt-0  ms-0 me-0 col-9 g-0 text-align-center">
-                    <div><iframe id="content" ref={ref} tabIndex="-1" src={vserverlink.url} ></iframe>
+                    <div><iframe title='VM' id="content" ref={ref} tabIndex="-1" src={vserverlink.url} ></iframe>
                     </div>
                 </div>
                 <div className="col-3 g-0 p-0 ms-0 me-0 " >
